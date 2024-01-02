@@ -5,12 +5,13 @@ import { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import Image from "next/image";
-import OktaAuth from "@okta/okta-auth-js";
+//import OktaAuth from "@okta/okta-auth-js";
 import { generateUUID } from "@/utility/helpers";
 import { setSSOAuthData } from "@/store/slices/authSlice";
 import { useRouter } from "next/navigation";
 
 const Login: FC = () => {
+  const navigate = useRouter();
   const router = useRouter();
   const dispatch = useDispatch<AppDispatch>();
 
@@ -18,11 +19,11 @@ const Login: FC = () => {
     (state: RootState) => state.authReduce
   );
 
-  const oktaAuth = new OktaAuth({
+/*   const oktaAuth = new OktaAuth({
     issuer: process.env.ISSUER,
     clientId: process.env.CLIENT_ID,
     redirectUri: process.env.REDIRECT_URI,
-  });
+  }); */
 
   // const getConfig = async () => {
   //   const conf = await axios.get(oktaConfigUrl);
@@ -73,7 +74,7 @@ const Login: FC = () => {
   //   });
   // };
 
-  const sso = async () => {
+  /* const sso = async () => {
     const state = generateUUID();
 
     oktaAuth.token
@@ -89,7 +90,7 @@ const Login: FC = () => {
         console.log(err);
         // handle OAuthError or AuthSdkError (AuthSdkError will be thrown if app is in OAuthCallback state)
       });
-  };
+  }; */
 
   // const getToken = async () => {
   //   const conf = await axios.post(config.token_endpoint, {
@@ -101,11 +102,11 @@ const Login: FC = () => {
   //   console.log(conf);
   // };
 
-  useEffect(() => {
+/*   useEffect(() => {
     if (isAuthenticated) {
       router.push("/dashboard");
     }
-  }, [isAuthenticated, router, userRole]);
+  }, [isAuthenticated, router, userRole]); */
 
   return (
     <div className="flex items-center justify-center w-full h-full">
@@ -142,10 +143,10 @@ const Login: FC = () => {
         </div>
 
         <div className="flex flex-col mb-4">
-          <button type="button" className="primary w-full mb-2">
+          <button type="button" className="primary w-full mb-2" onClick={() => navigate.replace("/dashboard")}>
             Sign in
           </button>
-          <button type="button" className="w-full" onClick={sso}>
+          <button type="button" className="w-full">
             Sign in with SSO
           </button>
         </div>
