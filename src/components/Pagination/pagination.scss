@@ -1,0 +1,26 @@
+.pagination {
+  @apply border border-gray-300 w-fit rounded-lg;
+
+  & button {
+    @apply rounded-none border-y-0 border-x-0 border-r;
+    min-width: 3.25em;
+
+    &:hover {
+      @apply bg-white;
+    }
+
+    &:first-child {
+      @apply rounded-l-lg;
+    }
+
+    &:last-child {
+      @apply rounded-r-lg border-r-0;
+    }
+
+    &.active {
+      opacity: 1 !important;
+      background: linear-gradient(0deg, #d0d5dd, #d0d5dd),
+        linear-gradient(0deg, #f9fafb, #f9fafb);
+    }
+  }
+}

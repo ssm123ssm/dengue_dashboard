@@ -1,0 +1,7 @@
+.dropper {
+    @apply flex flex-col items-center justify-center bg-white rounded-lg border border-light-blue-500 p-4;
+
+    &.hover {
+        @apply bg-light-blue-50;
+    }
+}

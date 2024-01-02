@@ -1,0 +1,47 @@
+.group {
+  @apply flex flex-row rounded-lg p-1 w-full;
+
+  & button {
+    @apply capitalize text-xs p-2 grow;
+  }
+
+  &.simple {
+    @apply rounded-l-lg rounded-r-lg p-0;
+
+    & button {
+      @apply rounded-none;
+
+      &:first-child {
+        @apply rounded-l-lg;
+      }
+
+      &:last-child {
+        @apply rounded-r-lg;
+      }
+
+      &.selected {
+        @apply bg-gray-300;
+      }
+    }
+  }
+
+  &.alternative {
+    @apply border border-gray-200 bg-gray-50;
+
+    & button {
+      @apply grow bg-gray-50 border-none text-gray-500;
+
+      &.selected {
+        @apply bg-white drop-shadow-md;
+      }
+    }
+
+    &.tiny {
+      @apply p-1 rounded-md;
+
+      & button {
+        @apply p-1 font-light rounded-md;
+      }
+    }
+  }
+}
