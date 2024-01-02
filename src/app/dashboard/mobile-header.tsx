@@ -16,7 +16,6 @@ const MobileHeader = ({ toggle = () => {} }) => {
         <HiMenu />
       </button>
       <div className="grow h-10 pl-4 relative">
-        <Image layout="fill" alt="logo" src="./assets/logo/logo.svg" />
       </div>
     </div>
   );
