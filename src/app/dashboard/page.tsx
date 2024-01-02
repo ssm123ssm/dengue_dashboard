@@ -201,11 +201,11 @@ const Dashboard: FC = () => {
     }
   }, [user]);
 
-  useEffect(() => {
+/*   useEffect(() => {
     if (!isAuthenticated) {
       router.push("/login");
     }
-  }, [isAuthenticated, router]);
+  }, [isAuthenticated, router]); */
 
   return (
     <div className="w-full h-full">
