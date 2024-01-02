@@ -36,8 +36,8 @@ const Page: FC = () => {
           <div className="flex flex-row w-full">
 
             <div className="flex my-3">
-              {ClinicalFeatures.slice(0, 3).map((feature) => (
-                <label className="mr-2 w-40" style={{ fontSize: 'unset', lineHeight: 'unset', fontWeight: 'unset' }}>
+              {ClinicalFeatures.slice(0, 3).map((feature, i) => (
+                <label key={i} className="mr-2 w-40" style={{ fontSize: 'unset', lineHeight: 'unset', fontWeight: 'unset' }}>
                   <input type="checkbox" name={feature} /> {feature}
                 </label>
               ))}
@@ -48,8 +48,8 @@ const Page: FC = () => {
           <div className="flex flex-row w-full my-3">
 
             <div className="flex">
-              {ClinicalFeatures.slice(3,6).map((feature) => (
-                <label className="mr-2 w-40" style={{ fontSize: 'unset', lineHeight: 'unset', fontWeight: 'unset' }}>
+              {ClinicalFeatures.slice(3,6).map((feature, i) => (
+                <label key={i} className="mr-2 w-40" style={{ fontSize: 'unset', lineHeight: 'unset', fontWeight: 'unset' }}>
                   <input type="checkbox" name={feature} /> {feature}
                 </label>
               ))}
@@ -60,8 +60,8 @@ const Page: FC = () => {
           <div className="flex flex-row w-full my-3">
 
             <div className="flex">
-              {ClinicalFeatures.slice(6,9).map((feature) => (
-                <label className="mr-2 w-40" style={{ fontSize: 'unset', lineHeight: 'unset', fontWeight: 'unset' }}>
+              {ClinicalFeatures.slice(6,9).map((feature, i) => (
+                <label key={i} className="mr-2 w-40" style={{ fontSize: 'unset', lineHeight: 'unset', fontWeight: 'unset' }}>
                   <input type="checkbox" name={feature} /> {feature}
                 </label>
               ))}
@@ -78,10 +78,10 @@ const Page: FC = () => {
 
           <div className="flex flex-row w-full my-3">
 
-            {Bleeding.map((feature) => (
-              <div className="flex flex-row  w-40">
+            {Bleeding.map((feature, i) => (
+              <div key={i} className="flex flex-row  w-40">
                 <div className="flex">
-                  <label className="mr-3" style={{ fontSize: 'unset', lineHeight: 'unset', fontWeight: 'unset' }}>
+                  <label  className="mr-3" style={{ fontSize: 'unset', lineHeight: 'unset', fontWeight: 'unset' }}>
                     <input type="checkbox" name={feature} /> {feature}
                   </label>
                 </div>
@@ -98,10 +98,10 @@ const Page: FC = () => {
 
           <div className="flex flex-col w-full">
 
-            {USS.map((feature) => (
-              <div className="flex flex-row my-1">
+            {USS.map((feature, i) => (
+              <div key={i} className="flex flex-row my-1">
 
-                <label className="mr-2 w-80" style={{ fontSize: 'unset', lineHeight: 'unset', fontWeight: 'unset' }}>
+                <label  className="mr-2 w-80" style={{ fontSize: 'unset', lineHeight: 'unset', fontWeight: 'unset' }}>
                   <input type="checkbox" name={feature} className="mr-3" /> {feature}
                 </label>
                 <input type="date" />
