@@ -1,4 +1,4 @@
-CLIENT_ID='0oae2mm3b52W6ZY2j5d7'
-REDIRECT_URI='http://localhost:3000/login/callback'
-ISSUER='https://dev-62010643.okta.com/oauth2/default'
-SCOPES='openid,profile,email'
+CLIENT_ID=''
+REDIRECT_URI=''
+ISSUER=''
+SCOPES=''
